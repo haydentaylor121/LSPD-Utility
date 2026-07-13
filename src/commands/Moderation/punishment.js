@@ -43,16 +43,16 @@ const CONFIG = {
   EMBED_COLOR: 0xE84142,
 
   // Roles allowed to run /punishment issue
-  ISSUER_ROLE_IDS: ['REPLACE_WITH_ROLE_ID_1', 'REPLACE_WITH_ROLE_ID_2'],
+  ISSUER_ROLE_IDS: ['1524811425997131796', '1521781111557066752'],
 
   // Roles allowed to click "Reviewed by IA/HC"
-  IA_HC_ROLE_IDS: ['REPLACE_WITH_IA_ROLE_ID', 'REPLACE_WITH_HIGH_COMMAND_ROLE_ID'],
+  IA_HC_ROLE_IDS: ['1521622449760895156', '1521628516930814083'],
 
   // Roles allowed to click "Department Hub Processed"
   HUB_ROLE_IDS: ['REPLACE_WITH_HUB_ADMIN_ROLE_ID'],
 
   // Roles allowed to click "Roles & Roster Updated"
-  ROSTER_MANAGER_ROLE_IDS: ['REPLACE_WITH_ROSTER_MANAGER_ROLE_ID'],
+  ROSTER_MANAGER_ROLE_IDS: ['1521628800842993684'],
 
   PUNISHMENT_TYPES: [
     { name: 'Written Warning', value: 'WRITTEN_WARNING', label: 'WRITTEN WARNING', color: 0xFACC15 },
