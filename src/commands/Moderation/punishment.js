@@ -37,7 +37,7 @@ const {
 // CONFIG — edit everything in this block
 // ======================================================================
 const CONFIG = {
-  PUNISHMENTS_FORUM_CHANNEL_ID: 'REPLACE_WITH_FORUM_CHANNEL_ID',
+  PUNISHMENTS_FORUM_CHANNEL_ID: '1525932520607322272',
   ROSTER_URL: 'https://example.com/roster',
   DEPARTMENT_NAME: 'LSPD',
   EMBED_COLOR: 0xE84142,
