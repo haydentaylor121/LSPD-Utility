@@ -167,7 +167,7 @@ function buildStatusEmbed(record) {
 // ── IA/HC Reviewed ────────────────────────────────────────────────────────────
 
 async function handleIAReview(interaction, caseId) {
-  if (!memberHasAnyRole(interaction.member, PUNISHMENT_CONFIG.IA_HC_REVIEWER_ROLE_IDS)) {
+  if (!memberHasAnyRole(interaction.member, PUNISHMENT_CONFIG.1521622449760895156,1521628516930814083)) {
     return ephemeralReply(interaction, '❌ You need the IA/HC role to use this button.');
   }
 
@@ -221,7 +221,7 @@ async function handleHubProcessed(interaction, caseId) {
 // ── Roles & Roster Updated ────────────────────────────────────────────────────
 
 async function handleRosterUpdated(interaction, caseId) {
-  if (!memberHasAnyRole(interaction.member, PUNISHMENT_CONFIG.ROSTER_MANAGER_ROLE_IDS)) {
+  if (!memberHasAnyRole(interaction.member, PUNISHMENT_CONFIG.1521628800842993684, 1526498908929392691)) {
     return ephemeralReply(interaction, '❌ You need the Roster Manager role to use this button.');
   }
 
