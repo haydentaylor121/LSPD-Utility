@@ -27,8 +27,8 @@ const ROLE_REQUIREMENTS = {
   basic_ride_along: [],
   uof_retraining: [],
   basic_training: [],
-  sergeant_ride_along: ['SERGEANT_ROLE_ID_HERE'],
-  command_ride_along: ['COMMAND_ROLE_ID_HERE'],
+  sergeant_ride_along: ['1524811592657666188'],
+  command_ride_along: ['1524811465557803168'],
 };
 
 // Dropdown options — order matches the requested layout.
