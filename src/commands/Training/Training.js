@@ -119,7 +119,7 @@ export default {
                                 `**Training Role:** ${saved.trainingRoleId ? `<@&${saved.trainingRoleId}>` : 'Not set'}`,
                                 `**Sergeant-Eligible Role:** ${saved.sergeantEligibleRoleId ? `<@&${saved.sergeantEligibleRoleId}>` : 'Not set'}`,
                                 `**Command-Eligible Role:** ${saved.commandEligibleRoleId ? `<@&${saved.commandEligibleRoleId}>` : 'Not set'}`,
-                                `**Expiry:** ${saved.expiryMinutes || 30} minutes`,
+                                `**Expiry:** ${saved.expiryMinutes || 120} minutes`,
                             ].join('\n'),
                         ),
                     ],
