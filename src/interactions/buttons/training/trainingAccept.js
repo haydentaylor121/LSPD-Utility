@@ -3,6 +3,7 @@ import { errorEmbed } from '../../../utils/embeds.js';
 import { logger } from '../../../utils/logger.js';
 import { getTrainingConfig, getTrainingRequest, saveTrainingRequest, TRAINING_TYPES } from '../../../utils/database/training.js';
 import { buildRequestEmbed, buildRequestButtons } from '../../../utils/training/trainingEmbeds.js';
+import { expireTrainingRequest, sendTrainingAcceptedDm } from '../../../utils/training/trainingRequestLifecycle.js';
 
 export default {
     name: 'training_accept',
@@ -27,11 +28,10 @@ export default {
         }
 
         if (Date.now() > request.expiresAt) {
-            request.status = 'expired';
-            await saveTrainingRequest(interaction.guildId, requestId, request);
+            await expireTrainingRequest(client, request);
             await interaction.update({
-                embeds: [buildRequestEmbed(request)],
-                components: [buildRequestButtons(request)],
+                embeds: [buildRequestEmbed({ ...request, status: 'expired' })],
+                components: [buildRequestButtons({ ...request, status: 'expired' })],
             }).catch(() => {});
             return interaction.followUp({
                 embeds: [errorEmbed('Expired', 'This request has expired.')],
@@ -65,8 +65,11 @@ export default {
             components: [buildRequestButtons(request)],
         });
 
+        await sendTrainingAcceptedDm(client, request.requesterId, typeMeta?.label || request.type);
+
         return interaction.followUp({
-            content: `<@${request.requesterId}>, ${interaction.user} has accepted your request!`,
+            content: 'Request accepted and requester notified.',
+            flags: MessageFlags.Ephemeral,
         }).catch(() => {});
     },
 };
