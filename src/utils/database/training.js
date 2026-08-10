@@ -4,15 +4,22 @@ import { logger } from '../logger.js';
 import { db } from './wrapper.js';
 import { getTrainingConfigKey, getTrainingRequestKey, getTrainingRequestsPrefix } from './trainingKeys.js';
 
+export const TRAINING_DEFAULTS = {
+    requestChannelId: '1525941201847713932',
+    ftdRoleId: '1524811810119876728',
+    trainingRoleId: '1524811810119876728',
+    expiryMinutes: 120,
+};
+
 // Requestable training/ride-along types shown in the panel dropdown.
 // `roleConfigKey` points at the guild-config field holding the role ID that
 // should be pinged + is allowed to Accept requests of this type.
 export const TRAINING_TYPES = {
-    basic_training: {
-        label: 'Basic Training',
-        description: 'Request a basic training session.',
-        emoji: '📘',
-        roleConfigKey: 'trainingRoleId',
+    basic_ridealong: {
+        label: 'Basic Ride Along',
+        description: 'Request a basic ride-along.',
+        emoji: '🚓',
+        roleConfigKey: 'ftdRoleId',
     },
     use_of_force_retraining: {
         label: 'Use of Force Retraining',
@@ -20,11 +27,11 @@ export const TRAINING_TYPES = {
         emoji: '⚖️',
         roleConfigKey: 'trainingRoleId',
     },
-    basic_ridealong: {
-        label: 'Basic Ride Along',
-        description: 'Request a basic ride-along.',
-        emoji: '🚓',
-        roleConfigKey: 'ftdRoleId',
+    basic_training: {
+        label: 'Basic Training',
+        description: 'Request a basic training session.',
+        emoji: '📘',
+        roleConfigKey: 'trainingRoleId',
     },
     sergeant_ridealong: {
         label: 'Sergeant Ride Along',
@@ -48,10 +55,21 @@ async function ensureReady() {
     }
 }
 
+function normalizeTrainingConfig(config = {}) {
+    const sanitizedConfig = Object.fromEntries(
+        Object.entries(config).filter(([, value]) => value !== null && value !== undefined && value !== ''),
+    );
+
+    return {
+        ...TRAINING_DEFAULTS,
+        ...sanitizedConfig,
+    };
+}
+
 export async function getTrainingConfig(guildId) {
     await ensureReady();
     const config = await db.get(getTrainingConfigKey(guildId));
-    return config || {};
+    return normalizeTrainingConfig(config || {});
 }
 
 export async function saveTrainingConfig(guildId, config) {
