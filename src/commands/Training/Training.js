@@ -9,7 +9,7 @@ import { buildPanelEmbed, buildPanelSelectRow } from '../../utils/training/train
 export default {
     data: new SlashCommandBuilder()
         .setName('training')
-        .setDescription('Manage the Ride-Along & Training Request system.')
+        .setDescription('Minutes before a pending request expires (default: 120).')
         .setDefaultMemberPermissions(PermissionFlagsBits.ManageGuild)
         .addSubcommand((sub) =>
             sub
