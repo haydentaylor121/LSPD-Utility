@@ -331,3 +331,23 @@ The `/loa` command posts an information panel with a green **LOA** button. Membe
 ### Required environment variables
 
 See `.env.example` for `LOA_CHANNEL_ID` and `LOA_PING_ROLE_ID`.
+
+## OIS (Officer-Involved Shooting) Report System
+
+The `/ois` command posts an information panel with a dropdown. Members select "OIS Report" to start a DM-guided 6-question form:
+
+1. **Callsign | Rank | Name**
+2. **Date and time of occurrence**
+3. **Supervisor(s) who assisted**
+4. **Shots fired, aiming, steps after**
+5. **Bodycam / dashcam footage link**
+6. **SOP acknowledgement (Yes/No)**
+
+Typing `cancel` at any question aborts the report. On completion, the report is posted to the staff channel with role ping and Approve/Deny buttons.
+
+- **Approve** opens a modal (grade /5, reviewed by, optional additional info) → DMs the officer a green "Accepted" embed
+- **Deny** opens the same modal → DMs the officer a red "Denied" embed
+
+### Required environment variables
+
+See `.env.example` for `OIS_CHANNEL_ID`, `OIS_PING_ROLE_ID`, and optional `OIS_IMAGE_URL`.
