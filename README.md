@@ -284,3 +284,35 @@ TitanBot is released under the MIT License. See [LICENSE](LICENSE) for details.
 Thank you for choosing TitanBot for your Discord server! We're constantly working to improve and add new features based on community feedback.
 
 *Last updated: May 2026*
+
+## LSPD Punishment System
+
+The `/punish issue` command allows authorized staff to:
+
+- Issue a punishment
+- Assign a configured punishment role
+- Create a punishment log in a Forum channel
+- Attach evidence
+- Send the member a punishment memorandum
+- Record member acknowledgement
+- Link members to the appeal channel
+- Track IA, department hub, role, and roster processing
+
+### Required environment variables
+
+See `.env.example` for the punishment system settings.
+
+### Required Discord permissions
+
+The bot requires:
+
+- View Channels
+- Send Messages
+- Send Messages in Threads
+- Create Public Threads
+- Embed Links
+- Attach Files
+- Read Message History
+- Manage Roles
+
+The bot's role must be positioned above every punishment role it needs to assign.
