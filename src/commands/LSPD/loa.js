@@ -19,12 +19,12 @@ const data = new SlashCommandBuilder()
 async function execute(interaction) {
   const embed = new EmbedBuilder()
     .setColor(ACCENT_GREEN)
-    .setTitle('📋 LOA (Leave of Absence)')
+    .setTitle('📆Request Leave of Absence')
     .setDescription(
       [
-        "Clicking the **LOA** button will allow you to submit a Leave of Absence request if you're going to be unavailable for a period of time.",
+        "Clicking the **LOA** button will allow you to submit a Leave of Absence request if you're going to be unavailable for a period of time or need time off.",
         '',
-        'Please provide the required information, including the **reason for your LOA** and **how long you expect to be away**. Your request will then be reviewed by the appropriate staff member. **Minimum time to go LOA is 7 days.**',
+        'Please provide the required information, including the **reason for your LOA** and **how long you expect to be away**. Your request will then be reviewed by the LSPD Command team. **Minimum time to go LOA is 7 days.**',
         '',
         '**⚠️ Please only submit an LOA if you genuinely need time away.**',
       ].join('\n'),
