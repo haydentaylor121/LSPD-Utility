@@ -1,21 +1,3 @@
-import {
-  ActionRowBuilder,
-  ButtonBuilder,
-  ButtonStyle,
-  EmbedBuilder,
-  PermissionFlagsBits,
-  SlashCommandBuilder,
-} from 'discord.js';
-
-import { ACCENT_GREEN } from '../../services/loaService.js';
-
-const data = new SlashCommandBuilder()
-  .setName('loa')
-  .setDescription('Post the LOA information panel')
-  .setDefaultMemberPermissions(
-    PermissionFlagsBits.ManageMessages,
-  );
-
 async function execute(interaction) {
   const embed = new EmbedBuilder()
     .setColor(ACCENT_GREEN)
@@ -37,10 +19,10 @@ async function execute(interaction) {
       .setStyle(ButtonStyle.Success),
   );
 
-  await interaction.reply({
+  await interaction.deferReply({ ephemeral: true });
+  await interaction.deleteReply();
+  await interaction.channel.send({
     embeds: [embed],
     components: [button],
   });
 }
-
-export default { data, category: 'LSPD', execute };
