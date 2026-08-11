@@ -7,7 +7,7 @@ export const OIS_PING_ROLE_ID =
   process.env.OIS_PING_ROLE_ID || '1521781111557066752';
 
 export const OIS_IMAGE_URL =
-  process.env.OIS_IMAGE_URL || '';
+  process.env.OIS_IMAGE_URL || 'https://images-ext-1.discordapp.net/external/ndZpAywnM8grHPyZ_SSzG_Z7AZ-U4ARAEoU8dgr45iw/https/i.postimg.cc/sgtgVwMJ/Untitled-design-15.webp?format=webp';
 
 export const ACCENT_BLUE = 0x2e51a2;
 export const ACCENT_GREEN = 0x3ba55d;
