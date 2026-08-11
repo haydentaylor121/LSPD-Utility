@@ -316,3 +316,18 @@ The bot requires:
 - Manage Roles
 
 The bot's role must be positioned above every punishment role it needs to assign.
+
+## LOA (Leave of Absence) System
+
+The `/loa` command posts an information panel with a green **LOA** button. Members press it to start a DM-guided request flow:
+
+1. Bot sends an intro DM, then a question embed with an **Answer** button
+2. Four questions are asked via modals (name/callsign, length, reason, acknowledgement)
+3. A confirmation embed with a **Submit** button appears
+4. On submit, the request is posted to the LOA staff channel with role ping, Accept and Deny buttons
+5. **Accept** DMs the requester an approval embed with End LOA Early / Modify LOA buttons
+6. **Deny** opens a modal for the denial reason, then DMs the requester a denial embed
+
+### Required environment variables
+
+See `.env.example` for `LOA_CHANNEL_ID` and `LOA_PING_ROLE_ID`.
