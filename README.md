@@ -351,3 +351,19 @@ Typing `cancel` at any question aborts the report. On completion, the report is 
 ### Required environment variables
 
 See `.env.example` for `OIS_CHANNEL_ID`, `OIS_PING_ROLE_ID`, and optional `OIS_IMAGE_URL`.
+
+## Donation Submission System
+
+The `/donate-submit` command lets members submit a donation with 5 steps:
+
+1. **Donation Amount**
+2. **Name and callsign**
+3. **Reason for donation**
+4. **Evidence** (optional photo/file attachment)
+5. **Confirmation** (Yes/No)
+
+The report is posted to the donation staff channel with role ping. Staff press **Send user a dm** to reply with a message and their name via a modal form.
+
+### Required environment variables
+
+See `.env.example` for `DONATION_CHANNEL_ID` and `DONATION_PING_ROLE_ID`.
