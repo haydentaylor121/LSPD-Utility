@@ -367,3 +367,9 @@ The report is posted to the donation staff channel with role ping. Staff press *
 ### Required environment variables
 
 See `.env.example` for `DONATION_CHANNEL_ID` and `DONATION_PING_ROLE_ID`.
+
+## Rank Requirements System
+
+The `/rank-requirements` command posts a message with a rank selector dropdown. Members select their rank (PO, PO2, PO3, CPL, SGT, SSGT, SGM, LT, HLT, CPT, HCPT, MJR, HMJR, CMDR, WCMDR) and a dedicated embed displays the promotion requirements for their next rank.
+
+No environment variables are required.
